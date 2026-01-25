@@ -14,6 +14,7 @@ void view_activity_page();
 typedef struct {
     char username[100];
     int password;
+    char jenisKebutuhan[100];
 } User;
 
 User user = {"", 4};
@@ -71,22 +72,72 @@ void main_menu() {
     printf("3. Lihat Tabel Keuangan\n");
     printf("4. Lihat Aktivitas\n");
     printf("5. Keluar\n");
+    printf("Pilihan Kamu \n");
+
+    int userChoice;
+    printf(":: ");
+    scanf("%d", &userChoice);
+
+    switch(userChoice) {
+        case 1:
+            set_persentase();
+            break;
+        
+        case 2:
+            count_budget_page();
+            break;
+        
+        case 3:
+            finansial_report_page();
+            break;
+        
+        case 4:
+            view_activity();
+            break;
+
+        case 5:
+            printf("Terima Kasih sudah menggunakan program ini\n");
+            return;
+
+        default:
+            printf("Maaf Pilihan tidak valid");
+    }
 
 }
 void set_persentase() {
+    int persentaseChoice;
+    int userPersentaseChoice;
+    int thePersentase = 1;
 
+    printf("Kamu mau bagi keuanganmu menjadi berapa jenis kebutuhan nih?\n");
+    printf(":: ");
+    scanf("%d", &persentaseChoice);
+
+    for(int i = 0; i < persentaseChoice; i++) {
+        printf("Jenis Kebutuhan : ");
+        fgets(user.jenisKebutuhan[persentaseChoice], sizeof(user.jenisKebutuhan), stdin);
+        printf("Persentase Kebutuhan : ");
+        scanf("%d", &userPersentaseChoice);
+
+        thePersentase - userPersentaseChoice;
+    }
+    printf("Set\n");
+    
 }
 
-void count_budget_persentase() {
-
+void count_budget_page() {
+    printf("Set\n");
+    
 }
 
-void finansial_report() {
-
+void finansial_report_page() {
+    printf("Set\n");
+    
 }
 
 void view_activity() {
-
+    printf("Set\n");
+    
 }
 
 void welcome_page() {
@@ -98,7 +149,6 @@ void welcome_page() {
 }
 
 int main() {
-
     welcome_page();
     login_user();
 
