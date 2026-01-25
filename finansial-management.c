@@ -15,6 +15,9 @@ typedef struct {
     char username[100];
     int password;
     char jenisKebutuhan[100];
+    int money;
+    int persentaseChoice;
+    int persentaseSetByUser;
 } User;
 
 User user = {"", 4};
@@ -105,33 +108,38 @@ void main_menu() {
 
 }
 void set_persentase() {
-    int persentaseChoice;
-    int userPersentaseChoice;
     int thePersentase = 1;
 
     printf("Kamu mau bagi keuanganmu menjadi berapa jenis kebutuhan nih?\n");
     printf(":: ");
-    scanf("%d", &persentaseChoice);
+    scanf("%d", user.persentaseChoice);
 
-    for(int i = 0; i < persentaseChoice; i++) {
+    for(int i = 0; i < user.persentaseChoice; i++) {
         printf("Jenis Kebutuhan : ");
-        fgets(user.jenisKebutuhan[persentaseChoice], sizeof(user.jenisKebutuhan), stdin);
+        fgets(user.jenisKebutuhan[user.persentaseChoice], sizeof(user.jenisKebutuhan), stdin);
         printf("Persentase Kebutuhan : ");
-        scanf("%d", &userPersentaseChoice);
+        scanf("%d", user.persentaseSetByUser);
 
-        thePersentase - userPersentaseChoice;
+        thePersentase - user.persentaseSetByUser;
     }
-    printf("Set\n");
-    
 }
 
 void count_budget_page() {
-    printf("Set\n");
-    
+    printf("Masukkan Banyaknya Uang Kamu : ");
+    scanf("%d", user.money);
+
+    int *countUserMoney;
+
+    for(int i = 0; i < user.persentaseChoice; i++) {
+        countUserMoney[i] = user.money * user.persentaseSetByUser;
+        printf("Jenis Kebutuhan [%d] : %s\n", i, user.jenisKebutuhan);
+        printf("Maksimal Budget [%d] : %d\n", i, countUserMoney[i]);        
+    }
+
+
 }
 
 void finansial_report_page() {
-    printf("Set\n");
     
 }
 
