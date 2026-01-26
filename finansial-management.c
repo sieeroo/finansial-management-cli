@@ -11,6 +11,8 @@ void count_budget_page();
 void finansial_report_page();
 void view_activity_page();
 
+int finansial_report = 0;
+
 typedef struct {
     char username[100];
     int password;
@@ -68,6 +70,13 @@ void login_user() {
 }
 
 void main_menu() {
+    printf("Uang : Rp%d", user.money);
+    
+    for(int i = 0; i < user.jenisKebutuhan; i++) {
+        printf("Jenis Kebutuhan : %s\n", user[i].jenisKebutuhan);
+        printf("Persentase : %d\n", user[i].persentaseSetByUser);
+    }
+
     printf("== Menu Utama ==\n");
     printf("\n");
     printf("1. Edit Persentase\n");
@@ -95,7 +104,7 @@ void main_menu() {
             break;
         
         case 4:
-            view_activity();
+            stack_activity();
             break;
 
         case 5:
@@ -125,8 +134,14 @@ void set_persentase() {
 }
 
 void count_budget_page() {
+    printf("===============================================\n");
+    printf("=               COUNT THE BUDGET              =\n");
+    printf("===============================================\n");
+
     printf("Masukkan Banyaknya Uang Kamu : ");
     scanf("%d", user.money);
+
+    printf("Uang : Rp%d", user.money);
 
     int *countUserMoney;
 
@@ -140,12 +155,27 @@ void count_budget_page() {
 }
 
 void finansial_report_page() {
-    
+    printf("===============================================\n");
+    printf("=               FINANSIAL REPORT              =\n");
+    printf("===============================================\n");
 }
 
-void view_activity() {
-    printf("Set\n");
+void stack_activity() {
+    printf("===============================================\n");
+    printf("=                STACK ACTIVITY               =\n");
+    printf("===============================================\n");
     
+    if(finansial_report == 0 ) {
+        printf("Tidak ada catatan finansial tersimpan..\n");
+        return;
+    }
+    
+    printf("\n");
+    printf("%-5s %-6s", "No", "Added");
+
+    for(int i = finansial_report - 1; i >= 0; i--) {
+        printf("[%d]   %-6s\n", i+1, );
+    }
 }
 
 void welcome_page() {
