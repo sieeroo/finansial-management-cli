@@ -1,5 +1,5 @@
-# FinMan
-**FinMan** adalah program manajemen kuangan sederhana yang basisnya jalan di _Command Line Interface_. Program ini dapat diaplikaskan sebagai media untuk mengatur keuangan bulanan mahasiswa dengan sistem membagi keuangan menjadi beberapa bagian (sesuai dengan keinginan user) dalam satuan persentase.
+# Simple Finansial Management
+Program ini adalah program manajemen kuangan sederhana yang basisnya jalan di _Command Line Interface_. Program ini dapat diaplikaskan sebagai media untuk mengatur keuangan bulanan mahasiswa dengan sistem membagi keuangan menjadi beberapa bagian (sesuai dengan keinginan user) dalam satuan persentase.
 
 
 ## Fitur
@@ -17,10 +17,10 @@
 1. Install compiler C (GCC/MinGW)
 2. Clone Repositori ini 
     ```bash
-    https://github.com/sieeroo/
+    https://github.com/sieeroo/finansial-management-cli
 3. Compile Program
     ```bash
-    gcc 
+    gcc finansial-management.c -o finansial-management
 4. Jalankan Program
     ```bash
-    ./
+    ./finansial-management
