@@ -1,5 +1,6 @@
-# SIMPLE FINANSIAL MANAGEMENT
-Program ini adalah 
+# FinMan
+**FinMan** adalah program manajemen kuangan sederhana yang basisnya jalan di _Command Line Interface_. Program ini dapat diaplikaskan sebagai media untuk mengatur keuangan bulanan mahasiswa dengan sistem membagi keuangan menjadi beberapa bagian (sesuai dengan keinginan user) dalam satuan persentase.
+
 
 ## Fitur
 * Set persentase
