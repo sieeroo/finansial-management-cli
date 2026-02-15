@@ -10,8 +10,8 @@ Program ini adalah program manajemen kuangan sederhana yang basisnya jalan di _C
 
 ## Teknologi yang Digunakan
 * Bahasa : C
-* Library :
-* Konsep Pemrograman : 
+* Library : stdio.h, string.h, time.h, dan stdlib.h
+* Konsep Pemrograman : I/O, struct, looping, conditional, 
 
 ## Cara Menjalankan 
 1. Install compiler C (GCC/MinGW)
